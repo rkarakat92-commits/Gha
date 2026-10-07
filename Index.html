@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Менің дүкенім</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">MENIŃ DÚKENIM</div>
+
+    <nav>
+        <a href="#home">Басты бет</a>
+        <a href="#products">Киімдер</a>
+        <a href="#about">Біз туралы</a>
+        <a href="#contact">Байланыс</a>
+    </nav>
+
+    <div class="cart">
+        🛒 Себет: <span id="cartCount">0</span>
+    </div>
+</header>
+
+<section class="hero" id="home">
+    <div class="hero-text">
+        <h1>Сәнді киімдер<br>бір жерде</h1>
+        <p>Өзіңе ұнайтын заманауи киімдерді таңда.</p>
+        <button onclick="goToProducts()">Сатып алуды бастау</button>
+    </div>
+</section>
+
+<section class="products-section" id="products">
+    <h2>Біздің тауарлар</h2>
+
+    <div class="categories">
+        <button onclick="filterProducts('all')">Барлығы</button>
+        <button onclick="filterProducts('tshirt')">Футболка</button>
+        <button onclick="filterProducts('jeans')">Шалбар</button>
+        <button onclick="filterProducts('dress')">Көйлек</button>
+        <button onclick="filterProducts('shoes')">Аяқ киім</button>
+    </div>
+
+    <div class="products" id="productList">
+
+        <div class="product" data-category="tshirt">
+            <div class="product-image">👕</div>
+            <h3>Ақ футболка</h3>
+            <p>Жеңіл әрі ыңғайлы футболка</p>
+            <strong>7 500 ₸</strong>
+            <button onclick="addToCart('Ақ футболка', 7500)">
+                Себетке қосу
+            </button>
+        </div>
+
+        <div class="product" data-category="tshirt">
+            <div class="product-image">👕</div>
+            <h3>Қара футболка</h3>
+            <p>Күнделікті киюге арналған</p>
+            <strong>8 000 ₸</strong>
+            <button onclick="addToCart('Қара футболка', 8000)">
+                Себетке қосу
+            </button>
+        </div>
+
+        <div class="product" data-category="jeans">
+            <div class="product-image">👖</div>
+            <h3>Көк джинсы</h3>
+            <p>Заманауи стильдегі джинсы</p>
+            <strong>18 000 ₸</strong>
+            <button onclick="addToCart('Көк джинсы', 18000)">
+                Себетке қосу
+            </button>
+        </div>
+
+        <div class="product" data-category="dress">
+            <div class="product-image">👗</div>
+            <h3>Әдемі көйлек</h3>
+            <p>Кешкі сәнге арналған көйлек</p>
+            <strong>25 000 ₸</strong>
+            <button onclick="addToCart('Әдемі көйлек', 25000)">
+                Себетке қосу
+            </button>
+        </div>
+
+        <div class="product" data-category="shoes">
+            <div class="product-image">👟</div>
+            <h3>Ақ кроссовка</h3>
+            <p>Ыңғайлы күнделікті аяқ киім</p>
+            <strong>22 000 ₸</strong>
+            <button onclick="addToCart('Ақ кроссовка', 22000)">
+                Себетке қосу
+            </button>
+        </div>
+
+        <div class="product" data-category="shoes">
+            <div class="product-image">👞</div>
+            <h3>Классикалық аяқ киім</h3>
+            <p>Ерлерге арналған классикалық үлгі</p>
+            <strong>30 000 ₸</strong>
+            <button onclick="addToCart('Классикалық аяқ киім', 30000)">
+                Себетке қосу
+            </button>
+        </div>
+
+    </div>
+</section>
+
+<section class="about" id="about">
+    <h2>Біз туралы</h2>
+    <p>
+        «Менің дүкенім» — заманауи және сапалы киімдерді
+        қолжетімді бағамен ұсынатын онлайн дүкен.
+    </p>
+</section>
+
+<section class="contact" id="contact">
+    <h2>Бізбен байланыс</h2>
+
+    <form onsubmit="sendMessage(event)">
+        <input type="text" id="name" placeholder="Атыңыз" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <textarea id="message" placeholder="Хабарламаңыз" required></textarea>
+        <button type="submit">Жіберу</button>
+    </form>
+</section>
+
+<footer>
+    <p>© 2026 Менің дүкенім. Барлық құқықтар қорғалған.</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
